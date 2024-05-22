@@ -1,4 +1,4 @@
-# WhatsApp Exporter
+# WhatsApp Desktop HTML/CSS
 
 - Whatsapp Desktop Uygulamasını HTML ve CSS İle Arayüzünü Klonladım.
 
