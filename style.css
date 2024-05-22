@@ -1,0 +1,729 @@
+/* author: Eyüp Aslan
+https://codepen.io/wexbie */
+
+/* genel stil başlangıç */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #202020;
+    color: #fff;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#custom-context-menu {
+    position: fixed;
+    background: #2d2d2d;
+    border-radius: 8px;
+    border: 1px solid #232323;
+    padding: 5px;
+    z-index: 1000;
+    display: none;
+}
+
+/* genel stil bitiş */
+
+/* ana stil başlangıç */
+
+.sidebar {
+    bottom: 0;
+    background-color: #2c2c2c;
+    color: aliceblue;
+    width: 377px;
+    height: 100%;
+    top: 40px;
+    left: 50px;
+    position: fixed;
+    margin-bottom: 0;
+    border-top-left-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    background-color: #202020;
+    width: 100%;
+    height: 40px;
+    right: 0px;
+    top: 0px;
+    position: fixed;
+}
+
+.container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.content {
+    background-color: #2c2c2c;
+    height: 65px;
+    width: 1600px;
+    margin: 0;
+    position: fixed;
+    left: 428px;
+    top: 40px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content img {
+    position: fixed;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+.chatbox {
+    background-color: #2c2c2c;
+    height: 45px;
+    width: calc(100% - 428px);
+    bottom: 0;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+}
+
+.chat {
+    background-image: url("assets/arka.png");
+    background-color: #2c2c2c;
+    height: calc(100% - 151.8px);
+    width: calc(100% - 428px);
+    position: fixed;
+    left: 428px;
+    padding-top: 40px;
+    bottom: 40px;
+    z-index: -999;
+    top: 106px;
+}
+
+.logo img {
+    right: 0;
+    border-radius: 50%;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+}
+
+.logosol {
+    top: 0;
+    padding-top: 11px;
+    padding-left: 13px;
+    height: 31px;
+    width: 33px;
+}
+
+h1 {
+    font-size: 20px;
+    padding-top: 15px;
+    padding-left: 20px;
+    color: #fff;
+}
+
+#whatsappbaslik {
+    display: flex;
+    margin-left: 3px;
+}
+
+#whatsappbaslik h5 {
+    font-size: 11px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 100;
+    padding-top: 15px;
+    padding-left: 13px;
+}
+
+.üstsimge {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    right: 63px;
+}
+
+.filtre svg {
+    color: #fff;
+    width: 17px;
+    height: 17px;
+    top: 20px;
+    right: 23px;
+    position: absolute;
+}
+
+/* ana stil bitiş */
+
+/* sol side stil başlangıç */
+
+.solside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50px;
+    background-color: #202020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+
+.message-container {
+    position: fixed;
+    top: 55px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.message-container:hover {
+    background-color: #2d2d2d;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+}
+
+.messagelogo {
+    width: 19px;
+    height: 19px;
+}
+
+.telefon-container {
+    position: fixed;
+    top: 94px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.telefon-container:hover {
+    background-color: #2d2d2d;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+}
+
+.telefonlogo {
+    width: 16px;
+    height: 16px;
+    transform: rotate(17deg);
+}
+
+.durum-container {
+    position: fixed;
+    top: 133px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.durum-container:hover {
+    background-color: #2d2d2d;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+}
+
+.durumlogo {
+    width: 16px;
+    height: 16px;
+}
+
+.yildizli-container {
+    position: fixed;
+    bottom: 145px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.yildizli-container:hover {
+    background-color: #2d2d2d;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+}
+
+#yildizli-logo i {
+    position: fixed;
+    bottom: 145px;
+}
+
+.arsiv-container {
+    position: fixed;
+    bottom: 100px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.arsiv-container:hover {
+    background-color: #2d2d2d;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+}
+
+.arsivlogo {
+    width: 21px;
+    height: 21px;
+}
+
+.ayrac {
+    position: fixed;
+    width: 30px;
+    height: 1px;
+    background-color: #1c1c1c;
+    margin: 0 10px;
+    bottom: 87px;
+}
+
+.ayar-container {
+    position: fixed;
+    bottom: 56px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.ayar-container:hover {
+    background-color: #2d2d2d;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+}
+
+.ayarlogo {
+    width: 16px;
+    height: 16px;
+}
+
+.kullanici-container {
+    position: fixed;
+    bottom: 8px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+.kullanici-container:hover {
+    background-color: #2d2d2d;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+}
+
+.kullanici {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* sol side stil bitiş */
+
+/* sidebardaki arama stil başlangıç */
+
+.ara-container {
+    top: 16px;
+    position: relative;
+    height: 45px;
+    background: #2c2c2c;
+    display: flex;
+    align-items: center;
+
+}
+
+.ara-container .input input {
+    outline: none;
+    border: none;
+    background: #3d3d3d;
+    padding: 5px;
+    padding-left: 34px;
+    height: 30px;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 335px;
+    left: 10px;
+    margin: 20px;
+    border-bottom: 1px solid #ccc;
+    caret-color: #fff;
+}
+
+.input input:focus {
+    border-bottom: 2px solid #1daa61;
+    background-color: #222222;
+    color: #868686;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding-bottom: 4px;
+}
+
+.input input::placeholder {
+    color: #d3d3d3;
+}
+
+.ara-container .input i {
+    position: absolute;
+    left: 26px;
+    top: 14px;
+    color: #b2b2b2;
+    font-size: 0.7em;
+}
+
+/* sidebardaki arama stil bitiş */
+
+/* sidebar mesaj stil başlangıç */
+
+.chat-list {
+    padding-top: 2px;
+    position: relative;
+    height: calc(100% - 30px);
+    overflow-y: auto;
+    margin-bottom: 13px;
+    z-index: 199;
+    padding-bottom: 30px;
+
+}
+
+.chat-list .chat-box {
+    position: relative;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 13.5px;
+    left: 10px;
+}
+
+.chat-list .chat-box .img-box {
+    position: relative;
+    width: 55px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.chat-list .chat-box .img-box img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.chat-list .chat-box .chat-details {
+    width: 100%;
+    margin-left: 14px;
+}
+
+.chat-list .chat-box .chat-details .text-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.chat-list .chat-box .chat-details .text-head h4 {
+    font-size: 0.8em;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.chat-list .chat-box .chat-details .text-head .time {
+    font-size: 0.6em;
+    color: #aaa;
+}
+
+.chat-list .chat-box .chat-details .text-message {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-list .chat-box .chat-details .text-message p {
+    color: #aaa;
+    font-size: 0.75em;
+    overflow-x: hidden;
+}
+
+p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 245px;
+}
+
+.chat-list .chat-box .chat-details .text-message b {
+    background: #1daa61;
+    color: #000;
+    min-width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    font-size: 0.6em;
+    font-weight: 550;
+    display: flex;
+    justify-content: center;
+}
+
+.chat-list .active {
+    background: #454545;
+    border-radius: 5.5px;
+}
+
+.chat-list .active:hover {
+    background: #515151 !important;
+}
+
+.chat-list .chat-box:hover {
+    background: #383838;
+    border-radius: 5px;
+}
+
+.chat-list .chat-box .chat-details .text-head .unread {
+    color: #1daa61;
+}
+
+.chat-list::-webkit-scrollbar {
+    width: 2px;
+}
+
+.chat-list::-webkit-scrollbar-thumb {
+    background-color: #9f9f9f;
+    border-radius: 35px;
+    height: 30px;
+}
+
+.chat-list::-webkit-scrollbar-track {
+    background-color: #f0f0f000;
+}
+
+/* sidebar mesaj stil bitiş */
+
+/* chatbox stil başlangıç */
+
+.chatbox-input {
+    position: relative;
+    width: 98%;
+    height: 45px;
+    background: #2c2c2c;
+    display: flex;
+    color: #fff;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbox-input i {
+    cursor: pointer;
+    font-size: 1em;
+    color: #ffffff;
+}
+
+.chatbox-input i:nth-child(1) {
+    margin: 23px;
+}
+
+.chatbox-input i:nth-child(2) {
+    margin: 18px;
+}
+
+.chatbox-input i:last-child {
+    right: -1px;
+}
+
+.chatbox-input input {
+    position: relative;
+    width: 90%;
+    padding: 10px 3px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    background-color: #2c2c2c;
+}
+
+.chatbox-input input:hover {
+    background-color: #3d3d3d;
+}
+
+.chatbox-input input:focus {
+    background-color: #2c2c2c;
+}
+
+.wexbie::placeholder {
+    color: #fff;
+}
+
+/* chatbox stil bitiş */
+
+/* header stil başlangıç */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px;
+    position: fixed;
+    left: 440px;
+}
+
+.header img {
+    margin-bottom: -20px;
+}
+
+.header .img-text .user-img .dp {
+    position: relative;
+    top: -20px;
+    left: 0;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.header .img-text {
+    flex: 1;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header .img-text h4 {
+    font-weight: 500;
+    line-height: 1.2em;
+    margin-left: 15px;
+    font-size: .965rem;
+}
+
+.header .img-text h4 span {
+    font-size: 0.8em;
+    color: #f3f3f3;
+}
+
+.header .nav-icons {
+    margin-right: 10px;
+}
+
+.header .nav-icons i {
+    padding: 10px;
+}
+
+/* header stil bitiş */
+
+/* responsive başlangıç */
+
+@media screen and (max-width: 600px) {
+    .sidebar {
+        width: 335px;
+    }
+
+    .ara-container .input input {
+        width: 295px;
+    }
+
+    .chat-list .chat-box .chat-details .text-head {
+        width: 235px;
+    }
+
+    .chat-list .chat-box .chat-details .text-message p {
+        position: relative;
+        width: 195px;
+    }
+
+    .chat-list .chat-box .chat-details .text-message b {
+        position: relative;
+        right: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .sidebar {
+        width: 337px;
+        height: 100%;
+    }
+
+    .chatbox-input {
+        background: none;
+        z-index: 555;
+    }
+
+    .chat-list {
+        padding-bottom: 0;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .container .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container .header .img-text {
+        margin-top: 10px;
+    }
+
+    .container .header .img-text h4 {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 426px) and (max-width: 968px) {
+    .sidebar {
+        width: 80px;
+    }
+
+    .sidebar>h1 {
+        display: none;
+    }
+
+    #aramaInput {
+        display: none;
+    }
+
+    .chat {
+        height: calc(100% - 151.8px);
+        width: calc(100% - 131.2px);
+        position: fixed;
+        left: 131.2px;
+        padding-top: 40px;
+        bottom: 40px;
+        z-index: -999;
+        top: 106px;
+    }
+
+    .chatbox,
+    .chat,
+    .content,
+    .header {
+        left: 131px;
+    }
+
+    .chatbox {
+        width: 100%;
+    }
+
+    .chatbox-input .fa-microphone {
+        position: fixed;
+        right: 38px;
+        padding-right: 15px;
+    }
+}
+/* responsive bitiş */
+
+/* whatsapp arayüz tasarım projesi bitiş */
