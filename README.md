@@ -9,10 +9,10 @@
 
 
 # Kullanım
--Bu depoyu klonlayın ya da indirin.
--Dosyayı bilgisayarınıza çıkarın.
--Dosya içindeki `index.html` dosyasını açın.
+- Bu depoyu klonlayın ya da indirin.
+- Dosyayı bilgisayarınıza çıkarın.
+- Dosya içindeki `index.html` dosyasını açın.
 
 
 # Demo
-https://whatsapp-clone-desktop.vercel.app/
+- https://whatsapp-clone-desktop.vercel.app/
