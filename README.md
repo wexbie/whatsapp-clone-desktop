@@ -41,7 +41,7 @@ git clone https://github.com/wexbie/whatsapp-desktop-clone.git
 - Bu depoyu fork edin.
 - Yeni bir branch oluşturun (git checkout -b feature/whatsapp-desktop-clone-update).
 - Değişikliklerinizi commit edin (git commit -m 'Deneme').
-- Branch'inizi pushlayın (git push origin feature/deneme).
+- Branch'inizi pushlayın (git push origin feature/whatsapp-desktop-clone-update).
 - Bir Pull Request açın.
 <hr>
 Lisans
