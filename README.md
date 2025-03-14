@@ -19,7 +19,7 @@
 - Projeyi klonlamak için aşağıdaki komutu kullanabilirsiniz:
 
 ```bash
-git clone https://github.com/kullanici-adiniz/whatsapp-desktop-clone.git
+git clone https://github.com/wexbie/whatsapp-desktop-clone.git
 ```
 
 - Ya da projeyi ZIP dosyası olarak indirip çıkarabilirsiniz.
