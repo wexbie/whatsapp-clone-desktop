@@ -4,11 +4,11 @@
 
 ### Proje Hakkında
 
-**Amaç:** WhatsApp Desktop uygulamasının kullanıcı arayüzünü birebir taklit etmek.
+- Amaç: WhatsApp Desktop uygulamasının kullanıcı arayüzünü birebir taklit etmek.
 
-**Teknolojiler:** HTML, CSS
+- Teknolojiler: HTML, CSS
 
-**Gelecek Planları:** JavaScript ile dinamik özellikler ve işlevsellik eklenmesi.
+- Gelecek Planları: JavaScript ile dinamik özellikler ve işlevsellik eklenmesi.
 
 ### Kullanım
 
